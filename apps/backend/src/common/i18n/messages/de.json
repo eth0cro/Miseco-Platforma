@@ -1,0 +1,5 @@
+{
+  "auth.invalidCredentials": "Ungültige Anmeldedaten.",
+  "auth.forbidden": "Sie haben keine Berechtigung für diese Aktion.",
+  "validation.required": "Feld ist erforderlich."
+}
