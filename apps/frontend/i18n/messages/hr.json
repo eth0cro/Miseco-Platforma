@@ -1,0 +1,22 @@
+{
+  "site.title": "Dobrodošli u MISECO platformu",
+  "site.subtitle": "Javni web i intranet sustav za poslovnice.",
+  "site.public": "Javni web",
+  "site.intranet": "Intranet",
+  "tabs.home": "Početna",
+  "tabs.about": "O nama",
+  "tabs.branches": "Poslovnice",
+  "tabs.jobs": "Otvorena radna mjesta",
+  "tabs.news": "Novosti",
+  "tabs.contact": "Kontakt",
+  "tabs.login": "Login",
+  "intranet.title": "Intranet modul",
+  "intranet.module": "Odabrani modul",
+  "intranet.rbacNotice": "Pristup je kontroliran kroz RBAC i audit log.",
+  "intranet.settlements": "Obračun",
+  "intranet.scheduler": "Raspored",
+  "intranet.storage": "Storage",
+  "intranet.chat": "Chat",
+  "intranet.repairs": "Kvarovi",
+  "intranet.video": "Video"
+}

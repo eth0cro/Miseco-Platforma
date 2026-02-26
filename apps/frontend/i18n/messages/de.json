@@ -1,0 +1,22 @@
+{
+  "site.title": "Willkommen auf der MISECO Plattform",
+  "site.subtitle": "Öffentliche Webseite und Intranet-System für Filialen.",
+  "site.public": "Öffentliche Webseite",
+  "site.intranet": "Intranet",
+  "tabs.home": "Startseite",
+  "tabs.about": "Über uns",
+  "tabs.branches": "Filialen",
+  "tabs.jobs": "Offene Stellen",
+  "tabs.news": "Neuigkeiten",
+  "tabs.contact": "Kontakt",
+  "tabs.login": "Anmeldung",
+  "intranet.title": "Intranet-Modul",
+  "intranet.module": "Ausgewähltes Modul",
+  "intranet.rbacNotice": "Der Zugriff wird über RBAC und Audit-Logs gesteuert.",
+  "intranet.settlements": "Abrechnung",
+  "intranet.scheduler": "Planer",
+  "intranet.storage": "Storage",
+  "intranet.chat": "Chat",
+  "intranet.repairs": "Störungen",
+  "intranet.video": "Video"
+}
