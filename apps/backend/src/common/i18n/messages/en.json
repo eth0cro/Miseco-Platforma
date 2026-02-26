@@ -1,0 +1,5 @@
+{
+  "auth.invalidCredentials": "Invalid credentials.",
+  "auth.forbidden": "You do not have permission for this action.",
+  "validation.required": "Field is required."
+}
