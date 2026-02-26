@@ -7,10 +7,9 @@ COPY apps/backend/package.json ./package.json
 RUN npm install
 
 COPY apps/backend/. ./
-COPY prisma /prisma
-COPY apps/backend/package.json /prisma/package.json
+COPY prisma ./prisma
 
-RUN npx prisma generate --schema /prisma/schema.prisma
+RUN npx prisma generate --schema ./prisma/schema.prisma
 RUN npm run build
 EXPOSE 4000
 CMD ["npm", "run", "start"]
