@@ -1,0 +1,27 @@
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: #121212;
+  color: #f4f4f4;
+}
+
+a {
+  color: #ff4a4a;
+  text-decoration: none;
+}
+
+header {
+  border-bottom: 1px solid #252525;
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main {
+  padding: 20px;
+}
