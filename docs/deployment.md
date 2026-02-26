@@ -17,8 +17,8 @@
 4. Start stack:
    - `docker compose up -d --build`
 5. Run Prisma migrations and seed admin.
-6. Issue Let's Encrypt certificate and mount into `infra/nginx/certs`.
-7. Restart nginx service container.
+6. (Optional, production hardening) Issue Let's Encrypt certificate and switch nginx to TLS config.
+7. Restart nginx service container after TLS config is in place.
 
 ### If ports 80/443 are already in use
 
@@ -40,3 +40,9 @@
   - `/opt/miseco/infra/scripts/restore.sh <db_dump.sql.gz> <optional_storage_snapshot>`
 
 Retention is configured for 30 days in backup scripts.
+
+
+## Nginx mode in this scaffold
+
+- Default `infra/nginx/default.conf` is HTTP reverse proxy on port 80 to avoid restart loops before certificates exist.
+- After certificates are provisioned, replace with TLS-enabled nginx config and restart nginx.
