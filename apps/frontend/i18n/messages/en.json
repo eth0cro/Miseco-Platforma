@@ -1,0 +1,22 @@
+{
+  "site.title": "Welcome to the MISECO platform",
+  "site.subtitle": "Public website and intranet system for branches.",
+  "site.public": "Public website",
+  "site.intranet": "Intranet",
+  "tabs.home": "Home",
+  "tabs.about": "About",
+  "tabs.branches": "Branches",
+  "tabs.jobs": "Open positions",
+  "tabs.news": "News",
+  "tabs.contact": "Contact",
+  "tabs.login": "Login",
+  "intranet.title": "Intranet module",
+  "intranet.module": "Selected module",
+  "intranet.rbacNotice": "Access is controlled through RBAC and audit logging.",
+  "intranet.settlements": "Settlements",
+  "intranet.scheduler": "Scheduler",
+  "intranet.storage": "Storage",
+  "intranet.chat": "Chat",
+  "intranet.repairs": "Repairs",
+  "intranet.video": "Video"
+}
