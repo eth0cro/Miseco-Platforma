@@ -46,3 +46,17 @@ Retention is configured for 30 days in backup scripts.
 
 - Default `infra/nginx/default.conf` is HTTP reverse proxy on port 80 to avoid restart loops before certificates exist.
 - After certificates are provisioned, replace with TLS-enabled nginx config and restart nginx.
+- If nginx logs `host not found in upstream`, verify the container uses Docker DNS (`resolver 127.0.0.11`) and recreate nginx (`docker compose up -d --force-recreate nginx`).
+
+
+### If PostgreSQL credentials changed after first boot
+
+If you changed `POSTGRES_PASSWORD` in `.env` **after** the first `postgres` start, the existing DB volume keeps the old password and backend auth will fail.
+
+- Keep old password value in `.env`, **or**
+- Recreate DB volume (data loss unless restored from backup):
+  - `docker compose down`
+  - `docker volume rm app_pg_data`
+  - `docker compose up -d`
+
+Then run migrations/seed again.
