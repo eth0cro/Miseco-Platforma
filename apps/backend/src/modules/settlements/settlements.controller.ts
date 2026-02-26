@@ -1,19 +1,9 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
-
-export type SettlementType = 'FINAL' | 'INTERIM';
-
-interface SettlementInput {
-  branchId: string;
-  period: string;
-  type: SettlementType;
-  cashierTotal: number;
-  zastrapayTotal: number;
-  terminalTotal: number;
-}
+import { SettlementInputDto, SettlementType } from './dto/settlement-input.dto';
 
 @Controller('settlements')
 export class SettlementsController {
-  private readonly store: SettlementInput[] = [];
+  private readonly store: SettlementInputDto[] = [];
 
   @Get('health')
   health() {
@@ -21,19 +11,19 @@ export class SettlementsController {
   }
 
   @Post('submit')
-  submit(@Body() payload: SettlementInput) {
+  submit(@Body() payload: SettlementInputDto) {
     this.store.push(payload);
     return {
       accepted: true,
       reviewRequired: true,
-      finalReportEligible: payload.type === 'FINAL',
-      archived: payload.type === 'INTERIM',
+      finalReportEligible: payload.type === SettlementType.FINAL,
+      archived: payload.type === SettlementType.INTERIM,
     };
   }
 
   @Get('final-report-preview')
   finalReportPreview() {
-    const finalEntries = this.store.filter((x) => x.type === 'FINAL');
+    const finalEntries = this.store.filter((x) => x.type === SettlementType.FINAL);
     const total = finalEntries.reduce(
       (acc, item) => acc + item.cashierTotal + item.zastrapayTotal + item.terminalTotal,
       0,

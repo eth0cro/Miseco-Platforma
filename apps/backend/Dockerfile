@@ -7,6 +7,7 @@ RUN npm install
 COPY apps/backend/. ./
 COPY prisma /prisma
 
+RUN npm run prisma:generate
 RUN npm run build
 EXPOSE 4000
 CMD ["npm", "run", "start"]
