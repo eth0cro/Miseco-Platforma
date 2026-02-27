@@ -8,12 +8,12 @@ export default function IntranetModulePage({
   const locale = locales.includes(params.locale) ? params.locale : 'hr';
 
   return (
-    <main>
+    <>
       <h1>{t(locale, 'intranet.title')}</h1>
       <p>
         {t(locale, 'intranet.module')}: <strong>{params.module}</strong>
       </p>
       <p>{t(locale, 'intranet.rbacNotice')}</p>
-    </main>
+    </>
   );
 }

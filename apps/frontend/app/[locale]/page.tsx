@@ -1,44 +1,38 @@
 import Link from 'next/link';
-import { LanguageSwitcher } from '../../components/LanguageSwitcher';
+import { PublicCards } from '../../components/sections/PublicCards';
+import { PublicHero } from '../../components/sections/PublicHero';
+import { PublicTopbar } from '../../components/layout/PublicTopbar';
+import { PublicFooter } from '../../components/layout/PublicFooter';
 import { Locale, locales, t } from '../../lib/i18n';
-
-const publicTabs = ['home', 'about', 'branches', 'jobs', 'news', 'contact', 'login'];
-const intranetTabs = ['settlements', 'scheduler', 'storage', 'chat', 'repairs', 'video'];
 
 export default function LocaleHome({ params }: { params: { locale: Locale } }) {
   const locale = locales.includes(params.locale) ? params.locale : 'hr';
 
   return (
-    <>
-      <header>
-        <div>
-          <strong>MISECO</strong>
-          <div>Sports LBS GmbH</div>
-        </div>
-        <LanguageSwitcher locale={locale} />
-      </header>
-      <main>
-        <h1>{t(locale, 'site.title')}</h1>
-        <p>{t(locale, 'site.subtitle')}</p>
+    <div className="page-shell">
+      <PublicTopbar locale={locale} />
+      <main className="public-main container">
+        <PublicHero locale={locale} />
+        <PublicCards locale={locale} />
 
-        <h2>{t(locale, 'site.public')}</h2>
-        <ul>
-          {publicTabs.map((tab) => (
-            <li key={tab}>
-              <Link href={`/${locale}/${tab}`}>{t(locale, `tabs.${tab}`)}</Link>
-            </li>
-          ))}
-        </ul>
-
-        <h2>{t(locale, 'site.intranet')}</h2>
-        <ul>
-          {intranetTabs.map((tab) => (
-            <li key={tab}>
-              <Link href={`/${locale}/app/${tab}`}>{t(locale, `intranet.${tab}`)}</Link>
-            </li>
-          ))}
-        </ul>
+        <section className="split-grid">
+          <article className="card mini-card">
+            <h3>{t(locale, 'site.public')}</h3>
+            <p>{t(locale, 'public.section.publicText')}</p>
+            <Link className="btn btn-ghost" href={`/${locale}/about`}>
+              {t(locale, 'public.cards.readMore')}
+            </Link>
+          </article>
+          <article className="card mini-card">
+            <h3>{t(locale, 'site.intranet')}</h3>
+            <p>{t(locale, 'public.section.intranetText')}</p>
+            <Link className="btn btn-primary" href={`/${locale}/app/dashboard`}>
+              {t(locale, 'public.section.intranetOpen')}
+            </Link>
+          </article>
+        </section>
       </main>
-    </>
+      <PublicFooter locale={locale} />
+    </div>
   );
 }
